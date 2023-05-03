@@ -13,10 +13,10 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:3009/players/13/
+GET http://localhost:3009/players/1/
 
 ###
-PUT http://localhost:3009/players/13/
+PUT http://localhost:3009/players/
 Content-Type: application/json
 
 {
