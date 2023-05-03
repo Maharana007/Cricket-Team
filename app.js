@@ -30,7 +30,7 @@ const convertObj = (objectItem) => {
   return {
     playerId: objectItem.player_id,
     playerName: objectItem.player_name,
-    jerseyName: objectItem.jersey_name,
+    jerseyNumber: objectItem.jersey_number,
     role: objectItem.role,
   };
 };
@@ -73,9 +73,9 @@ app.get("/players/:playerId/", async (request, response) => {
 app.put("/players/:playerId/", async (request, response) => {
   try {
     const { playerId } = request.params;
-    const { playerName, jerseyName, role } = request.body;
+    const { playerName, jerseyNumber, role } = request.body;
     const updatePlayerQuery = ` UPDATE cricket_team SET 
-    player_name= '${playerName}', jersey_name= ${jerseyNumber},
+    player_name= '${playerName}', jersey_number= ${jerseyNumber},
     role= '${role}' WHERE player_id= ${playerId};
    `;
     await db.run(updatePlayerQuery);
